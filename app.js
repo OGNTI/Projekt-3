@@ -59,18 +59,18 @@ var model = {
 
 		if (direction === 1) {  
 			row = Math.floor(Math.random() * this.boardSize);
-			col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+			col = Math.floor(Math.random() * (this.boardSize - this.shipLength)); //make sure ships appear inside playarea
 		} else { 
-			row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+			row = Math.floor(Math.random() * (this.boardSize - this.shipLength)); //make sure ships appear inside playarea
 			col = Math.floor(Math.random() * this.boardSize);
 		}
 
 		var newShipLocations = [];
 		for (var i = 0; i < this.shipLength; i++) {
 			if (direction === 1) {
-				newShipLocations.push(row + "" + (col + i));
+				newShipLocations.push(row + "" + (col + i)); 	//sets location from row/col and extends out verticaly
 			} else {
-				newShipLocations.push((row + i) + "" + col);
+				newShipLocations.push((row + i) + "" + col);	//sets location from row/col and extends out horizontaly
 			}
 		}
 		return newShipLocations;
